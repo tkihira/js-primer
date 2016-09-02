@@ -1,0 +1,1101 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>条件分岐 · JavaScriptの入門書 #jsprimer</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../loop/" />
+    
+    
+    <link rel="prev" href="../function-method/" />
+    
+
+    <link rel="canonical" href="https://asciidwango.github.io/js-primer/basic/condition/">
+
+<style>
+    /* deny access chapter */
+    .summary li.chapter > span {
+        cursor: not-allowed;
+        opacity: .3;
+    }
+
+    /* console ui */
+    .mirror-console-attach-button-wrapper {
+        margin-top: -1.275em;
+        margin-bottom: 1.275em
+    }
+
+    .mirror-console-wrapper {
+        margin-top: 1.275em;
+        margin-bottom: 1.275em
+    }
+</style>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    書籍の読み方
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../intro/goal/">
+            
+                <a href="../../intro/goal/">
+            
+                    
+                    本書の目的
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    基礎文法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    JavaScriptとは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../comments/">
+            
+                <a href="../comments/">
+            
+                    
+                    コメント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" >
+            
+                <span>
+            
+                    
+                    字句構造
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" >
+            
+                <span>
+            
+                    
+                    Strict mode
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../variables/">
+            
+                <a href="../variables/">
+            
+                    
+                    変数と宣言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../read-eval-print/">
+            
+                <a href="../read-eval-print/">
+            
+                    
+                    値の評価と表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../data-type/">
+            
+                <a href="../data-type/">
+            
+                    
+                    データ型とリテラル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../function-method/">
+            
+                <a href="../function-method/">
+            
+                    
+                    関数と宣言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    条件分岐
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../loop/">
+            
+                <a href="../loop/">
+            
+                    
+                    ループと反復処理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../operator/">
+            
+                <a href="../operator/">
+            
+                    
+                    演算子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../implicit-coercion/">
+            
+                <a href="../implicit-coercion/">
+            
+                    
+                    暗黙的な型変換
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" >
+            
+                <span>
+            
+                    
+                    文
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" >
+            
+                <span>
+            
+                    
+                    String
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" >
+            
+                <span>
+            
+                    
+                    Number
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" >
+            
+                <span>
+            
+                    
+                    配列
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" >
+            
+                <span>
+            
+                    
+                    オブジェクト
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" >
+            
+                <span>
+            
+                    
+                    Destructuring
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" >
+            
+                <span>
+            
+                    
+                    関数/Arrow Function
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" >
+            
+                <span>
+            
+                    
+                    Spread Operator
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" >
+            
+                <span>
+            
+                    
+                    Error/Throw
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" >
+            
+                <span>
+            
+                    
+                    クラス
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.23" >
+            
+                <span>
+            
+                    
+                    正規表現
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.24" >
+            
+                <span>
+            
+                    
+                    Generator/Iterable/Iterator
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    ビルトインオブジェクト
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" >
+            
+                <span>
+            
+                    
+                    JSON
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    Date
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    Map/WeakMap
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" >
+            
+                <span>
+            
+                    
+                    Set/WeakSet
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" >
+            
+                <span>
+            
+                    
+                    Symbol
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" >
+            
+                <span>
+            
+                    
+                    Promise
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Note
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    ECMAScript策定プロセス
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    Reflect API
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <span>
+            
+                    
+                    Proxy
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" >
+            
+                <span>
+            
+                    
+                    Unicode
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" >
+            
+                <span>
+            
+                    
+                    Intl
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    応用編（ユースケース）
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../ajaxapp/">
+            
+                <a href="../../ajaxapp/">
+            
+                    
+                    Ajaxで通信
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="../../ajaxapp/entrypoint/">
+            
+                <a href="../../ajaxapp/entrypoint/">
+            
+                    
+                    エントリポイント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="../../ajaxapp/xhr/">
+            
+                <a href="../../ajaxapp/xhr/">
+            
+                    
+                    HTTP通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.3" data-path="../../ajaxapp/display/">
+            
+                <a href="../../ajaxapp/display/">
+            
+                    
+                    データを表示する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.4" data-path="../../ajaxapp/promise/">
+            
+                <a href="../../ajaxapp/promise/">
+            
+                    
+                    Promiseを活用する
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" >
+            
+                <span>
+            
+                    
+                    Node.jsでCLIアプリ
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" >
+            
+                <span>
+            
+                    
+                    TODOアプリ
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >条件分岐</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6761;&#x4EF6;&#x5206;&#x5C90;">&#x6761;&#x4EF6;&#x5206;&#x5C90;</h1><p>&#x3053;&#x306E;&#x7AE0;&#x3067;&#x306F;if&#x6587;&#x3084;switch&#x6587;&#x3092;&#x4F7F;&#x3063;&#x305F;&#x6761;&#x4EF6;&#x5206;&#x5C90;&#x306B;&#x3064;&#x3044;&#x3066;&#x5B66;&#x3093;&#x3067;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p><h2 id="if&#x6587;">if&#x6587;</h2><p>if&#x6587;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;&#x3001;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x5185;&#x306B;&#x6761;&#x4EF6;&#x5206;&#x5C90;&#x3092;&#x66F8;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p><p>if&#x6587;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x69CB;&#x6587;&#x304C;&#x57FA;&#x672C;&#x5F62;&#x3068;&#x306A;&#x308A;&#x3001;<code>&#x6761;&#x4EF6;&#x5F0F;</code>&#x306E;&#x8A55;&#x4FA1;&#x7D50;&#x679C;&#x304C;<code>true</code>&#x3067;&#x3042;&#x308B;&#x306A;&#x3089;&#x3070;&#x3001;
+<code>&#x5B9F;&#x884C;&#x3059;&#x308B;&#x6587;</code>&#x304C;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-js"><span class="hljs-keyword">if</span> (&#x6761;&#x4EF6;&#x5F0F;)
+    &#x5B9F;&#x884C;&#x3059;&#x308B;&#x6587;;</code></pre>
+<p>&#x3069;&#x306E;&#x3088;&#x3046;&#x306A;&#x5F0F;&#x304C;<code>true</code>&#x3068;&#x3057;&#x3066;&#x8A55;&#x4FA1;&#x3055;&#x308C;&#x308B;&#x304B;&#x306F;&#x3001;<a title="TODO: &#x30EA;&#x30F3;&#x30AF;&#x304C;&#x672A;&#x5B8C;&#x6210;" href="../Boolean/README.md">Boolean&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;</a>&#x3067;&#x7D39;&#x4ECB;&#x3057;&#x307E;&#x3059;&#x3002;</p><ul><li>[ ] TODO: Boolean&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30EA;&#x30F3;&#x30AF;&#x5148;&#x304C;&#x306A;&#x3044;
+</li></ul>
+<p><code>&#x5B9F;&#x884C;&#x3059;&#x308B;&#x6587;</code>&#x304C;&#x8907;&#x6570;&#x884C;&#x3067;&#x3042;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;<code>{</code> &#x3068; <code>}</code>&#x3067;&#x56F2;&#x307F;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;<code>{</code> &#x3068; <code>}</code>&#x3067;&#x56F2;&#x3093;&#x3060;&#x7BC4;&#x56F2;&#x3092;<strong>&#x30D6;&#x30ED;&#x30C3;&#x30AF;</strong>&#x3068;&#x547C;&#x3073;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-js"><span class="hljs-keyword">if</span> (&#x6761;&#x4EF6;&#x5F0F;) {
+    &#x5B9F;&#x884C;&#x3059;&#x308B;&#x6587;;
+    &#x5B9F;&#x884C;&#x3059;&#x308B;&#x6587;;
+}</code></pre>
+<p>&#x6B21;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3067;&#x306F; <code>year</code> &#x304C; <code>2015</code> &#x3088;&#x308A;&#x3082;&#x5927;&#x304D;&#x306A;&#x5024;&#x3067;&#x3042;&#x308B;&#x5834;&#x5408;&#x3001;
+if&#x6587;&#x306E; <code>{</code> &#x3068; <code>}</code> &#x3067;&#x56F2;&#x307E;&#x308C;&#x305F;&#x30D6;&#x30ED;&#x30C3;&#x30AF;&#x5185;&#x304C;&#x51E6;&#x7406;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p><p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p><pre><code class="lang-javascript"><span class="hljs-comment">// &#x73FE;&#x5728;&#x306E;&#x897F;&#x66A6;&#x3092;`year`&#x306B;&#x4EE3;&#x5165;</span>
+<span class="hljs-keyword">var</span> year = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getFullYear();
+<span class="hljs-keyword">if</span> (year &gt; <span class="hljs-number">2015</span>) {
+    <span class="hljs-built_in">console</span>.log(year);
+}</code></pre>
+<p><code>&#x5B9F;&#x884C;&#x3059;&#x308B;&#x6587;</code>&#x304C;1&#x884C;&#x306E;&#x307F;&#x3067;&#x3042;&#x308B;&#x5834;&#x5408;&#x3001;&#x30D6;&#x30ED;&#x30C3;&#x30AF;&#x306F;&#x7701;&#x7565;&#x304C;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x304C;&#x3001;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x8AAD;&#x307F;&#x306B;&#x304F;&#x3055;&#x306B;&#x7E4B;&#x304C;&#x308B;&#x305F;&#x3081;&#x5E38;&#x306B;&#x3064;&#x3051;&#x308B;&#x3053;&#x3068;&#x3092;&#x63A8;&#x5968;&#x3057;&#x307E;&#x3059;&#x3002;</p><h3 id="else-if&#x6587;">else if&#x6587;</h3><p>&#x8907;&#x6570;&#x306E;&#x6761;&#x4EF6;&#x5206;&#x5C90;&#x3092;&#x66F8;&#x304F;&#x5834;&#x5408;&#x306F;&#x3001;if&#x6587;&#x306B;&#x7D9A;&#x3051;&#x3066;else if&#x6587;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x305F;&#x3068;&#x3048;&#x3070;&#x3001;&#x6B21;&#x306E;3&#x3064;&#x306E;&#x6761;&#x4EF6;&#x5206;&#x5C90;&#x3059;&#x308B;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x3092;&#x8003;&#x3048;&#x307E;&#x3059;&#x3002;</p><ul><li><code>version</code> &#x304C; &quot;ES5&quot; &#x306A;&#x3089;&#x3070; &quot;ECMAScript 5&quot; &#x3068;&#x51FA;&#x529B;
+</li>
+<li><code>version</code> &#x304C; &quot;ES6&quot; &#x306A;&#x3089;&#x3070; &quot;ECMAScript 2015&quot; &#x3068;&#x51FA;&#x529B;
+</li>
+<li><code>version</code> &#x304C; &quot;ES7&quot; &#x306A;&#x3089;&#x3070; &quot;ECMAScript 2016&quot; &#x3068;&#x51FA;&#x529B;
+</li></ul>
+<p>&#x6B21;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3067;&#x306F;&#x3001;if&#x6587;&#x3068;else if&#x6587;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;3&#x3064;&#x306E;&#x6761;&#x4EF6;&#x3092;&#x66F8;&#x3044;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p><p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> version = <span class="hljs-string">&quot;ES6&quot;</span>;
+<span class="hljs-keyword">if</span> (version === <span class="hljs-string">&quot;ES5&quot;</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;ECMAScript 5&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (version === <span class="hljs-string">&quot;ES6&quot;</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;ECMAScript 2015&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (version === <span class="hljs-string">&quot;ES7&quot;</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;ECMAScript 2016&quot;</span>);
+}</code></pre>
+<h3 id="else&#x6587;">else&#x6587;</h3><p>if&#x6587;&#x3068;else if&#x6587;&#x3067;&#x306F;&#x3001;&#x6761;&#x4EF6;&#x306B;&#x4E00;&#x81F4;&#x3057;&#x305F;&#x5834;&#x5408;&#x306E;&#x51E6;&#x7406;&#x3092;&#x30D6;&#x30ED;&#x30C3;&#x30AF;&#x5185;&#x306B;&#x66F8;&#x3044;&#x3066;&#x3044;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x4E00;&#x65B9;&#x3001;&#x6761;&#x4EF6;&#x306B;&#x4E00;&#x81F4;&#x3057;&#x306A;&#x304B;&#x3063;&#x305F;&#x5834;&#x5408;&#x306E;&#x51E6;&#x7406;&#x306F;&#x3001;else&#x6587;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p><p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> string = <span class="hljs-string">&quot;JavaScript&quot;</span>;
+<span class="hljs-keyword">if</span> (string.length &gt; <span class="hljs-number">0</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`&#x6587;&#x5B57;&#x5217; &quot;<span class="hljs-subst">${string}</span>&quot; &#x304C;&#x3042;&#x308A;&#x307E;&#x3059;`</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x7A7A;&#x6587;&#x5B57;&#x5217;&#x3067;&#x3059;&quot;</span>);
+}
+</code></pre>
+<h4 id="&#x30CD;&#x30B9;&#x30C8;&#x3057;&#x305F;if&#x6587;">&#x30CD;&#x30B9;&#x30C8;&#x3057;&#x305F;if&#x6587;</h4><p>if&#x3001;else if&#x3001;else&#x6587;&#x306F;<code>&#x5B9F;&#x884C;&#x3059;&#x308B;&#x6587;</code>&#x3068;&#x3057;&#x3066;&#x3055;&#x3089;&#x306B;if&#x6587;&#x3092;&#x66F8;&#x304D;&#x30CD;&#x30B9;&#x30C8;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p><p>&#x30CD;&#x30B9;&#x30C8;&#x3057;&#x305F;if&#x6587;&#x306E;&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3001;&#x4ECA;&#x5E74;&#x304C;&#x3046;&#x308B;&#x3046;&#x5E74;&#x304B;&#x3092;&#x5224;&#x5B9A;&#x3057;&#x3066;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p><p>&#x3046;&#x308B;&#x3046;&#x5E74;&#x306E;&#x6761;&#x4EF6;&#x306F;&#x6B21;&#x306E;&#x3068;&#x304A;&#x308A;&#x3067;&#x3059;&#x3002;</p><!-- textlint-disable preset-ja-technical-writing/no-start-duplicated-conjunction -->
+
+
+<ul><li>&#x897F;&#x66A6;&#x3067;&#x793A;&#x3057;&#x305F;&#x5E74;&#x304C;4&#x3067;&#x5272;&#x308A;&#x5207;&#x308C;&#x308B;&#x5E74;&#x306F;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3067;&#x3059;
+</li>
+<li>&#x305F;&#x3060;&#x3057;&#x3001;&#x897F;&#x66A6;&#x3067;&#x793A;&#x3057;&#x305F;&#x5E74;&#x304C;100&#x3067;&#x5272;&#x308A;&#x5207;&#x308C;&#x308B;&#x5E74;&#x306F;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;
+</li>
+<li>&#x305F;&#x3060;&#x3057;&#x3001;&#x897F;&#x66A6;&#x3067;&#x793A;&#x3057;&#x305F;&#x5E74;&#x304C;400&#x3067;&#x5272;&#x308A;&#x5207;&#x308C;&#x308B;&#x5E74;&#x306F;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3067;&#x3059;
+</li></ul>
+<!-- textlint-enable preset-ja-technical-writing/no-start-duplicated-conjunction -->
+
+
+<p>&#x897F;&#x66A6;&#x3067;&#x793A;&#x3057;&#x305F;&#x5E74;&#x306F; <code>new Date().getFullYear();</code> &#x3067;&#x53D6;&#x5F97;&#x3067;&#x304D;&#x308B;&#x305F;&#x3081;&#x3001;
+&#x3053;&#x306E;&#x6761;&#x4EF6;&#x3092;if&#x6587;&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3068;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p><p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> year = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getFullYear();
+<span class="hljs-keyword">if</span> (year % <span class="hljs-number">4</span> === <span class="hljs-number">0</span>) { <span class="hljs-comment">// 4&#x3067;&#x5272;&#x308A;&#x5207;&#x308C;&#x308B;</span>
+    <span class="hljs-keyword">if</span> (year % <span class="hljs-number">100</span> === <span class="hljs-number">0</span>) { <span class="hljs-comment">// 100&#x3067;&#x5272;&#x308A;&#x5207;&#x308C;&#x308B;</span>
+        <span class="hljs-keyword">if</span> (year % <span class="hljs-number">400</span> === <span class="hljs-number">0</span>) { <span class="hljs-comment">// 400&#x3067;&#x5272;&#x308A;&#x5207;&#x308C;&#x308B;</span>
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3067;&#x3059;&quot;</span>);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&quot;</span>);
+        }
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3067;&#x3059;&quot;</span>);
+    }
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&quot;</span>);
+}</code></pre>
+<p>&#x6761;&#x4EF6;&#x3092;&#x4E0A;&#x304B;&#x3089;&#x9806;&#x306B;&#x66F8;&#x304D;&#x4E0B;&#x3057;&#x305F;&#x305F;&#x3081;&#x3001;&#x30CD;&#x30B9;&#x30C8;&#x304C;&#x6DF1;&#x3044;&#x6587;&#x3068;&#x306A;&#x3063;&#x3066;&#x3057;&#x307E;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x4E00;&#x822C;&#x306B;&#x30CD;&#x30B9;&#x30C8;&#x306F;&#x5C11;&#x306A;&#x3044;&#x65B9;&#x304C;&#x3001;&#x8AAD;&#x307F;&#x3084;&#x3059;&#x3044;&#x30B3;&#x30FC;&#x30C9;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p><p>&#x6761;&#x4EF6;&#x3092;&#x5C11;&#x3057;&#x8AAD;&#x307F;&#x89E3;&#x304F;&#x3068;&#x3001;400&#x3067;&#x5272;&#x308A;&#x5207;&#x308C;&#x308B;&#x5E74;&#x306F;&#x7121;&#x6761;&#x4EF6;&#x306B;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;&#x6761;&#x4EF6;&#x3092;&#x4E26;&#x3073;&#x66FF;&#x3048;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x30CD;&#x30B9;&#x30C8;&#x3059;&#x308B;if&#x6587;&#x306A;&#x3057;&#x306B;&#x66F8;&#x304F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p><p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> year = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getFullYear();
+<span class="hljs-keyword">if</span> (year % <span class="hljs-number">400</span> === <span class="hljs-number">0</span>) { <span class="hljs-comment">// 400&#x3067;&#x5272;&#x308A;&#x5207;&#x308C;&#x308B;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3067;&#x3059;&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (year % <span class="hljs-number">100</span> === <span class="hljs-number">0</span>) { <span class="hljs-comment">// 100&#x3067;&#x5272;&#x308A;&#x5207;&#x308C;&#x308B;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (year % <span class="hljs-number">4</span> === <span class="hljs-number">0</span>) { <span class="hljs-comment">// 4&#x3067;&#x5272;&#x308A;&#x5207;&#x308C;&#x308B;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3067;&#x3059;&quot;</span>);
+} <span class="hljs-keyword">else</span> { <span class="hljs-comment">// &#x305D;&#x308C;&#x4EE5;&#x5916;</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x3046;&#x308B;&#x3046;&#x5E74;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&quot;</span>);
+}
+</code></pre>
+<h2 id="switch&#x6587;">switch&#x6587;</h2><p>switch&#x6587;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;&#x69CB;&#x6587;&#x3092;&#x6301;&#x3061;&#x3001;<code>&#x5F0F;</code>&#x306E;&#x8A55;&#x4FA1;&#x7D50;&#x679C;&#x304C;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x5024;&#x3067;&#x3042;&#x308B;&#x5834;&#x5408;&#x306B;&#x884C;&#x3046;&#x51E6;&#x7406;&#x3092;&#x4E26;&#x3079;&#x3066;&#x66F8;&#x304D;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-js"><span class="hljs-keyword">switch</span> (&#x5F0F;) {
+    <span class="hljs-keyword">case</span> &#x30E9;&#x30D9;&#x30EB;<span class="hljs-number">1</span>:
+        <span class="hljs-comment">// `&#x5F0F;`&#x306E;&#x8A55;&#x4FA1;&#x7D50;&#x679C;&#x304C;`&#x30E9;&#x30D9;&#x30EB;1`&#x3068;&#x4E00;&#x81F4;&#x3059;&#x308B;&#x5834;&#x5408;&#x306B;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x6587;</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> &#x30E9;&#x30D9;&#x30EB;<span class="hljs-number">2</span>:
+        <span class="hljs-comment">// `&#x5F0F;`&#x306E;&#x8A55;&#x4FA1;&#x7D50;&#x679C;&#x304C;`&#x30E9;&#x30D9;&#x30EB;2`&#x3067;&#x3042;&#x308B;&#x5834;&#x5408;&#x306B;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x6587;</span>
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-comment">// &#x3069;&#x306E;case&#x306B;&#x3082;&#x8A72;&#x5F53;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x306E;&#x51E6;&#x7406;</span>
+        <span class="hljs-keyword">break</span>;
+}
+<span class="hljs-comment">// break; &#x5F8C;&#x306F;&#x3053;&#x3053;&#x304B;&#x3089;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;</span></code></pre>
+<p>switch&#x6587;&#x306F;if&#x6587;&#x3068;&#x540C;&#x69D8;&#x306B;<code>&#x5F0F;</code>&#x306E;&#x8A55;&#x4FA1;&#x7D50;&#x679C;&#x306B;&#x3082;&#x3068;&#x3065;&#x304F;&#x6761;&#x4EF6;&#x5206;&#x5C90;&#x3092;&#x6271;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x307E;&#x305F;break&#x6587;&#x306F;&#x3001;switch&#x6587;&#x304B;&#x3089;&#x629C;&#x3051;switch&#x6587;&#x306E;&#x6B21;&#x306E;&#x6587;&#x304B;&#x3089;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x3082;&#x306E;&#x3067;&#x3059;&#x3002;
+&#x6B21;&#x306E;&#x4F8B;&#x3067;&#x306F;<code>version</code>&#x306E;&#x8A55;&#x4FA1;&#x7D50;&#x679C;&#x306F;<code>&quot;ES6&quot;</code>&#x3068;&#x306A;&#x308B;&#x305F;&#x3081;&#x3001;<code>case &quot;ES6&quot;:</code>&#x306B;&#x7D9A;&#x304F;&#x6587;&#x304C;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> version = <span class="hljs-string">&quot;ES6&quot;</span>;
+<span class="hljs-keyword">switch</span> (version) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;ES5&quot;</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;ECMAScript 5&quot;</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;ES6&quot;</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;ECMAScript 2015&quot;</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;ES7&quot;</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;ECMAScript 2016&quot;</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x3057;&#x3089;&#x306A;&#x3044;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x3067;&#x3059;&quot;</span>);
+        <span class="hljs-keyword">break</span>;
+}
+<span class="hljs-comment">// &quot;ECMAScript 2015&quot; &#x3068;&#x51FA;&#x529B;&#x3055;&#x308C;&#x308B;</span>
+</code></pre>
+<p>&#x3053;&#x308C;&#x306F;if&#x6587;&#x3067;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x3044;&#x305F;&#x5834;&#x5408;&#x3068;&#x540C;&#x3058;&#x7D50;&#x679C;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p><p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p><pre><code class="lang-js"><span class="hljs-keyword">var</span> version = <span class="hljs-string">&quot;ES6&quot;</span>;
+<span class="hljs-keyword">if</span> (version === <span class="hljs-string">&quot;ES5&quot;</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;ECMAScript 5&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (version === <span class="hljs-string">&quot;ES6&quot;</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;ECMAScript 2015&quot;</span>);
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (version === <span class="hljs-string">&quot;ES7&quot;</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;ECMAScript 2016&quot;</span>);
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x3057;&#x3089;&#x306A;&#x3044;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x3067;&#x3059;&quot;</span>);
+}</code></pre>
+<p>switch&#x6587;&#x306F;&#x3084;&#x3084;&#x8907;&#x96D1;&#x306A;&#x4ED5;&#x7D44;&#x307F;&#x3067;&#x3042;&#x308B;&#x305F;&#x3081;&#x3069;&#x306E;&#x3088;&#x3046;&#x306B;&#x51E6;&#x7406;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x3092;&#x898B;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x307E;&#x305A; <code>switch (&#x5F0F;)</code> &#x306E;<code>&#x5F0F;</code>&#x3092;&#x8A55;&#x4FA1;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-js"><span class="hljs-keyword">switch</span> (&#x5F0F;) {
+    <span class="hljs-comment">// case</span>
+}</code></pre>
+<p>&#x6B21;&#x306B;<code>&#x5F0F;</code>&#x306E;&#x8A55;&#x4FA1;&#x7D50;&#x679C;&#x306B;&#x4E00;&#x81F4;&#x3059;&#x308B;&#x30E9;&#x30D9;&#x30EB;&#x3092;&#x63A2;&#x7D22;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x4E00;&#x81F4;&#x3059;&#x308B;&#x30E9;&#x30D9;&#x30EB;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x305D;&#x306E;case&#x7BC0;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x4E00;&#x81F4;&#x3059;&#x308B;<code>&#x30E9;&#x30D9;&#x30EB;</code>&#x304C;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;default&#x7BC0;&#x304C;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-js"><span class="hljs-keyword">switch</span> (&#x5F0F;) {
+    <span class="hljs-comment">// if (&#x5F0F; === &quot;&#x30E9;&#x30D9;&#x30EB;1&quot;)</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;&#x30E9;&#x30D9;&#x30EB;1&quot;</span>:
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-comment">// else if (&#x5F0F; === &quot;&#x30E9;&#x30D9;&#x30EB;2&quot;)</span>
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;&#x30E9;&#x30D9;&#x30EB;2&quot;</span>:
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-comment">// else</span>
+    <span class="hljs-keyword">default</span>:
+        <span class="hljs-keyword">break</span>;
+}</code></pre>
+<h3 id="break&#x6587;">break&#x6587;</h3><p>switch&#x6587;&#x306E;case&#x7BC0;&#x3067;&#x306F;&#x57FA;&#x672C;&#x7684;&#x306B;<code>break;</code>&#x3092;&#x4F7F;&#x3044;switch&#x6587;&#x3092;&#x629C;&#x3051;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;<code>break;</code>&#x306F;&#x7701;&#x7565;&#x304C;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x304C;&#x3001;&#x7701;&#x7565;&#x3057;&#x305F;&#x5834;&#x5408;&#x3001;&#x5F8C;&#x308D;&#x306B;&#x7D9A;&#x304F;case&#x7BC0;&#x304C;&#x6761;&#x4EF6;&#x306B;&#x95A2;&#x4FC2;&#x306A;&#x304F;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p><p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> version = <span class="hljs-string">&quot;ES6&quot;</span>;
+<span class="hljs-keyword">switch</span> (version) {
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;ES5&quot;</span>:
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;ECMAScript 5&quot;</span>);
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;ES6&quot;</span>: <span class="hljs-comment">// &#x4E00;&#x81F4;&#x3059;&#x308B;&#x30B1;&#x30FC;&#x30B9;</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;ECMAScript 2015&quot;</span>);
+    <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;ES7&quot;</span>: <span class="hljs-comment">// break&#x3055;&#x308C;&#x306A;&#x3044;&#x305F;&#x3081;&#x6761;&#x4EF6;&#x7121;&#x8996;&#x3057;&#x3066;&#x5B9F;&#x884C;</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;ECMAScript 2016&quot;</span>);
+    <span class="hljs-keyword">default</span>:    <span class="hljs-comment">// break&#x3055;&#x308C;&#x306A;&#x3044;&#x305F;&#x3081;&#x6761;&#x4EF6;&#x7121;&#x8996;&#x3057;&#x3066;&#x5B9F;&#x884C;</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x3057;&#x3089;&#x306A;&#x3044;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x3067;&#x3059;&quot;</span>);
+}
+<span class="hljs-comment">/*
+ &quot;ECMAScript 2015&quot;
+ &quot;ECMAScript 2016&quot;
+ &quot;&#x3057;&#x3089;&#x306A;&#x3044;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x3067;&#x3059;&quot;
+ &#x3068;&#x51FA;&#x529B;&#x3055;&#x308C;&#x308B;
+ */</span></code></pre>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;<code>break;</code>&#x3092;&#x5FD8;&#x308C;&#x3066;&#x3057;&#x307E;&#x3046;&#x3068;&#x610F;&#x56F3;&#x3057;&#x306A;&#x3044;&#x6319;&#x52D5;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;case&#x7BC0;&#x3068;break&#x6587;&#x304C;&#x591A;&#x7528;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;switch&#x6587;&#x304C;&#x51FA;&#x3066;&#x304D;&#x305F;&#x5834;&#x5408;&#x3001;
+&#x5225;&#x306E;&#x65B9;&#x6CD5;&#x3067;&#x66F8;&#x304B;&#x306A;&#x3044;&#x304B;&#x3092;&#x8003;&#x3048;&#x308B;&#x3079;&#x304D;&#x30B5;&#x30A4;&#x30F3;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p><p>&#x4E00;&#x822C;&#x306B;switch&#x6587;&#x306F;if&#x6587;&#x306E;&#x4EE3;&#x7528;&#x3068;&#x3057;&#x3066;&#x4F7F;&#x3046;&#x306E;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;&#x95A2;&#x6570;&#x3068;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;&#x3066;&#x5024;&#x3092;&#x8FD4;&#x3059;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x3068;&#x3057;&#x3066;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x304C;&#x591A;&#x3044;&#x3067;&#x3059;&#x3002;</p><p><a class="gitbook-plugin-js-console" aria-hidden="true"></a></p><pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getECMAScriptName</span>(<span class="hljs-params">version</span>) </span>{
+    <span class="hljs-keyword">switch</span> (version) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;ES5&quot;</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;ECMAScript 5&quot;</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;ES6&quot;</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;ECMAScript 2015&quot;</span>;
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;ES7&quot;</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;ECMAScript 2016&quot;</span>;
+        <span class="hljs-keyword">default</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&#x3057;&#x3089;&#x306A;&#x3044;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x3067;&#x3059;&quot;</span>;
+    }
+}
+<span class="hljs-comment">// &#x95A2;&#x6570;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;`return`&#x3055;&#x308C;&#x305F;&#x5024;&#x3092;&#x5F97;&#x308B;</span>
+getECMAScriptName(<span class="hljs-string">&quot;ES6&quot;</span>); <span class="hljs-comment">// =&gt; &quot;ECMAScript 2015&quot;</span></code></pre>
+<p>&#x95A2;&#x6570;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x3001;n&#x7AE0; &#x3067;&#x8A73;&#x3057;&#x304F;&#x89E3;&#x8AAC;&#x3057;&#x307E;&#x3059;&#x3002;</p><ul><li>[ ] &#x95A2;&#x6570;&#x306E;&#x7AE0;&#x3092;&#x66F8;&#x3044;&#x305F;&#x3089;n&#x7AE0;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;&#x3002;
+</li></ul>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2><ul><li><a href="https://ja.wikipedia.org/wiki/%E9%96%8F%E5%B9%B4" target="_blank">&#x958F;&#x5E74; - Wikipedia</a>
+</li>
+<li><a href="http://www.geekpage.jp/programming/c/leap-year.php" target="_blank">C&#x8A00;&#x8A9E;&#x5165;&#x9580;&#xFF1A;&#x3046;&#x308B;&#x3046;&#x5E74;&#x5224;&#x5B9A;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;:Geek&#x306A;&#x307A;&#x30FC;&#x3058;</a>
+</li>
+<li><a href="http://d.hatena.ne.jp/kazu-yamamoto/20080904/1220495854" target="_blank">&#x3069;&#x3046;&#x3057;&#x3066;&#x3053;&#x3093;&#x306A;&#x30AD;&#x30FC;&#x30EF;&#x30FC;&#x30C9;&#x304C;&#x3042;&#x308B;&#x306E;&#xFF1F; - &#x3042;&#x3069;&#x3051;&#x306A;&#x3044;&#x8A71;</a>
+</li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/switch" target="_blank">switch - JavaScript | MDN</a>
+</li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" target="_blank">&#x5236;&#x5FA1;&#x30D5;&#x30ED;&#x30FC;&#x3068;&#x30A8;&#x30E9;&#x30FC;&#x51E6;&#x7406; - JavaScript | MDN</a>
+</li></ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../function-method/" class="navigation navigation-prev " aria-label="Previous page: 関数と宣言">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../loop/" class="navigation navigation-next " aria-label="Next page: ループと反復処理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"author":"azu","title":"条件分岐","level":"1.4.9","depth":2,"next":{"title":"ループと反復処理","level":"1.4.10","depth":2,"path":"basic/loop/README.md","ref":"basic/loop/README.md","articles":[]},"previous":{"title":"関数と宣言","level":"1.4.8","depth":2,"path":"basic/function-method/README.md","ref":"basic/function-method/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["include-codeblock","edit-link","canonical-link","ga","js-console"],"root":"./source/","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"js-console":{},"canonical-link":{"baseURL":"https://asciidwango.github.io/js-primer"},"highlight":{},"ga":{"configuration":"auto","token":"UA-2184335-18"},"include-codeblock":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit","base":"https://github.com/asciidwango/js-primer/edit/master/source/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"index.html.md","glossary":"GLOSSARY.md","summary":"README.md"},"variables":{"console":"<a class=\"gitbook-plugin-js-console\" aria-hidden=\"true\"></a>"},"title":"JavaScriptの入門書 #jsprimer","gitbook":">=3.0.0","description":"この書籍はES2015以降をベースとしたJavaScript入門書となる予定"},"file":{"path":"basic/condition/README.md","mtime":"2016-09-02T14:35:31.024Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-09-02T14:38:02.905Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-js-console/console-ui.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
